@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<style type="text/css">
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Flipping the video as it was not mirror view */
+    video {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        margin-top: 5px;
+    }
+
+    /* Flipping the canvas image as it was not mirror view */
+    #canvas {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+</style>
+
+<body>
+    <div class="jumbotron">
+        <p><span id="errorMsg"></span></p>
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Here we streaming video from webcam -->
+                <h4>
+                    Video coming from Webcam <button class="btn btn-primary" id="btnCapture">Capture to Canvas
+                        >></button>
+                </h4>
+                <video id="video" playsinline autoplay></video>
+            </div>
+
+            <div class="col-lg-6">
+                <h4>
+                    Captured image from Webcam <input type="button" class="btn btn-primary" id="btnSave" name="btnSave"
+                        value="Save the canvas(image) to server" />
+                </h4>
+                <!-- Webcam video snapshot -->
+                <canvas style="border:solid 1px #ddd;background-color:white;" id="canvas" width="475"
+                    height="475"></canvas>
+            </div>
+        </div>
+        <p id="text">In 1955, Disneyland had just opened in Anaheim, California, when a ten-year-old boy walked in and
+            asked for a job. Labor
+            laws were loose back then and the boy managed to land a position selling guidebooks for $0.50 apiece.
+
+            Within a year, he had transitioned to Disney’s magic shop, where he learned tricks from the older employees.
+            He
+            experimented with jokes and tried out simple routines on visitors. Soon he discovered that what he loved was
+            not
+            performing magic but performing in general. He set his sights on becoming a comedian.
+
+            Beginning in his teenage years, he started performing in little clubs around Los Angeles. The crowds were
+            small and his
+            act was short. He was rarely on stage for more than five minutes. Most of the people in the crowd were too
+            busy drinking
+            or talking with friends to pay attention. One night, he literally delivered his stand-up routine to an empty
+            club.
+
+            It wasn’t glamorous work, but there was no doubt he was getting better. His first routines would only last
+            one or two
+            minutes. By high school, his material had expanded to include a five-minute act and, a few years later, a
+            ten-minute
+            show. At nineteen, he was performing weekly for twenty minutes at a time. He had to read three poems during
+            the show
+            just to make the routine long enough, but his skills continued to progress.
+
+            He spent another decade experimenting, adjusting, and practicing. He took a job as a television writer and,
+            gradually,
+            he was able to land his own appearances on talk shows. By the mid-1970s, he had worked his way into being a
+            regular
+            guest on The Tonight Show and Saturday Night Live.</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script async defer src="./script.js" />
+
+</body>
+
+</html>
